@@ -21,7 +21,7 @@ function UserList() {
     }, [data, setUsers])
 
     return (
-        <div>
+        <div className='w-full'>
             <h1>Users</h1>
 
             <div className="flex gap-2 mb-4">

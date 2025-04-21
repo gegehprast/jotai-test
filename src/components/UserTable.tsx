@@ -1,6 +1,7 @@
 import { useAtom } from 'jotai'
 import { userAtomsAtom } from '../atoms/usersAtom'
-import { UserRow } from './UserRow'
+import UserRow from './UserRow'
+import { memo } from 'react'
 
 const UserTable = () => {
     const [userAtoms] = useAtom(userAtomsAtom)
@@ -20,7 +21,6 @@ const UserTable = () => {
                 </tr>
             </thead>
 
-
             <tbody>
                 {userAtoms.map((userAtom, index) => (
                     <UserRow key={index} num={index + 1} userAtom={userAtom} />
@@ -30,4 +30,4 @@ const UserTable = () => {
     )
 }
 
-export default UserTable
+export default memo(UserTable)
